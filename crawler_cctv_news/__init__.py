@@ -1,5 +1,5 @@
 """
-weather_scraper - 中国天气网天气预报爬虫
+crawler_cctv_news - 央视新闻热点爬虫
 
 仅做个人学习使用，不商用、不高频恶意请求
 """

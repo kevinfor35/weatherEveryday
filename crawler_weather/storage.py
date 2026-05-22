@@ -8,7 +8,7 @@ import logging
 import os
 from datetime import datetime
 
-from weather_scraper.config import OUTPUT_DIR
+from crawler_weather.config import OUTPUT_DIR
 
 logger = logging.getLogger(__name__)
 

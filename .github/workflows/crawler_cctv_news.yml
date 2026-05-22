@@ -1,15 +1,15 @@
-name: Daily Weather Crawl
+name: Crawler CCTV News
 
 on:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 2 * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  crawl-weather:
+  crawl-cctv-news:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,13 +27,13 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Run weather crawler
-        run: uv run python main.py
+      - name: Run CCTV news crawler
+        run: uv run python -m crawler_cctv_news.main
 
-      - name: Commit and push weather data
+      - name: Commit and push news data
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -f output/ || true
-          git diff --staged --quiet || git commit -m "chore: update weather data $(date +%Y-%m-%d)"
+          git diff --staged --quiet || git commit -m "chore: update cctv news data $(date +%Y-%m-%d)"
           git push

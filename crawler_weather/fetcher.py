@@ -10,7 +10,7 @@ import time
 
 import requests
 
-from weather_scraper.config import (
+from crawler_weather.config import (
     ENCODING,
     HEADERS,
     MAX_RETRIES,
@@ -71,7 +71,7 @@ def fetch_city_weather(city_code: str) -> str | None:
     Returns:
         HTML文本内容，请求失败返回None
     """
-    from weather_scraper.config import BASE_URL_7D
+    from crawler_weather.config import BASE_URL_7D
 
     url = BASE_URL_7D.format(city_code=city_code)
     return fetch_page(url)
