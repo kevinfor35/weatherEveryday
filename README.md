@@ -10,7 +10,8 @@
 multi-crawler/
 ├── .github/workflows/              # GitHub Actions 工作流
 │   ├── crawler_weather.yml         # 天气爬虫（每天 09:00）
-│   └── crawler_cctv_news.yml       # 央视新闻爬虫（每天 10:00）
+│   ├── crawler_cctv_news.yml       # 央视新闻爬虫（每天 10:00）
+│   └── crawler_douban.yml          # 豆瓣榜单爬虫（每天 11:00）
 ├── crawler_weather/                # 天气爬虫
 │   ├── __init__.py
 │   ├── config.py                   # 城市编码、请求头、延时参数
@@ -25,9 +26,17 @@ multi-crawler/
 │   ├── parser.py                   # HTML 解析模块
 │   ├── storage.py                  # JSON 存储
 │   └── main.py                     # 入口
+├── crawler_douban/                 # 豆瓣榜单爬虫
+│   ├── __init__.py
+│   ├── config.py                   # 榜单URL、请求头、延时参数
+│   ├── fetcher.py                  # HTTP 请求模块（含随机bid cookie）
+│   ├── parser.py                   # HTML 解析模块
+│   ├── storage.py                  # CSV 存储
+│   └── main.py                     # 入口
 ├── output/                         # 输出目录（运行时自动创建）
 │   ├── crawler_weather/
-│   └── crawler_cctv_news/
+│   ├── crawler_cctv_news/
+│   └── crawler_douban/
 ├── main.py                         # 统一入口
 ├── pyproject.toml                  # 共享依赖配置
 └── README.md
@@ -39,6 +48,7 @@ multi-crawler/
 |---|---|---|---|---|
 | `crawler_weather` | 天气预报爬虫 | 中国天气网 | CSV + JSON | 每天 09:00 |
 | `crawler_cctv_news` | 央视新闻热点爬虫 | 央视新闻 | JSON | 每天 10:00 |
+| `crawler_douban` | 豆瓣影视热播榜单爬虫 | 豆瓣电影 | CSV | 每天 11:00 |
 
 ## 安装与运行
 
@@ -52,10 +62,12 @@ python main.py --help
 # 运行指定爬虫
 python main.py crawler_weather
 python main.py crawler_cctv_news
+python main.py crawler_douban
 
 # 或直接运行模块
 uv run python -m crawler_weather.main
 uv run python -m crawler_cctv_news.main
+uv run python -m crawler_douban.main
 ```
 
 ## 添加新爬虫
@@ -87,6 +99,7 @@ dependencies = [
 |---|---|---|---|
 | `crawler_weather.yml` | `0 1 * * *` | 09:00 | 天气预报 |
 | `crawler_cctv_news.yml` | `0 2 * * *` | 10:00 | 央视新闻 |
+| `crawler_douban.yml` | `0 3 * * *` | 11:00 | 豆瓣榜单 |
 
 所有工作流均支持 `workflow_dispatch` 手动触发。
 

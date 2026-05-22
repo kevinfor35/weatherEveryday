@@ -73,7 +73,7 @@ HEADERS = {
     ),
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
-    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Encoding": "gzip, deflate",
     "Connection": "keep-alive",
     "Referer": "https://example.com/",
 }
@@ -273,3 +273,80 @@ uv run python main.py crawler_xxx
 ### 7. import路径
 
 每个爬虫模块内部互相引用时，使用 `from crawler_xxx.config import ...` 格式（以爬虫目录名为包名），不要用相对路径 `from .config import ...`，确保 `python -m crawler_xxx.main` 和 `python main.py crawler_xxx` 两种运行方式都能正常工作。
+
+### 8. Accept-Encoding 不要包含 br（brotli）
+
+**问题**：`requests` 库默认不支持 brotli（`br`）解压缩。如果在 `Accept-Encoding` 中声明了 `br`，服务器可能返回 brotli 压缩的响应，但 `requests` 无法解压，导致 `response.text` 为乱码或空字符串。
+
+**解决方案**：
+- `Accept-Encoding` 只写 `"gzip, deflate"`，不要加 `br`
+- `requests` 原生支持 gzip 和 deflate 自动解压
+- 如需 brotli 支持，需额外安装 `brotli` 或 `brotlicffi` 包
+
+**示例**：
+```python
+# 错误 - 可能导致乱码
+"Accept-Encoding": "gzip, deflate, br"
+
+# 正确
+"Accept-Encoding": "gzip, deflate"
+```
+
+### 9. 桌面端详情页有JS反爬验证时，使用移动端页面
+
+**问题**：部分网站（如豆瓣）的桌面端详情页有 JavaScript 反爬验证（如 SHA-512 proof-of-work 挑战），纯 `requests` 无法通过验证，返回的是"载入中..."挑战页面而非真实内容。
+
+**解决方案**：
+- 尝试访问移动端页面（如 `m.douban.com` 代替 `movie.douban.com`），移动端通常没有JS验证
+- 在 `config.py` 中配置 `MOBILE_HEADERS`（使用移动端 User-Agent）
+- 在 `fetcher.py` 中添加 `build_mobile_url()` 函数，将桌面端URL转换为移动端URL
+- `fetch_page()` 增加 `use_mobile` 参数，按需切换请求头
+
+**示例**：
+```python
+# config.py
+MOBILE_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) ...",
+    "Referer": "https://m.douban.com/",
+}
+
+# fetcher.py
+def build_mobile_url(desktop_url: str) -> str:
+    return desktop_url.replace(
+        "https://movie.douban.com/", "https://m.douban.com/movie/"
+    )
+
+def fetch_page(url: str, use_mobile: bool = False) -> str | None:
+    base_headers = MOBILE_HEADERS if use_mobile else HEADERS
+    ...
+
+# main.py
+mobile_url = build_mobile_url(movie["url"])
+detail_html = fetch_page(mobile_url, use_mobile=True)
+```
+
+### 10. HTML标签class属性可能与预期不符
+
+**问题**：根据经验假设的HTML标签class属性可能与实际页面不符。例如豆瓣榜单页的影片信息在 `<p>` 标签中，但该 `<p>` 标签没有 `class="pl"` 属性，而评分人数的 `<span>` 才有 `class="pl"`。
+
+**解决方案**：
+- **先用脚本抓取实际HTML并分析结构**，不要凭经验假设
+- 使用多级降级策略查找标签：先按精确class查找，找不到则按标签名查找
+- 解析结果为0时，第一时间保存HTML到文件检查实际结构
+
+**示例**：
+```python
+# 降级查找 <p> 标签
+info_p = pl2.find("p", class_="pl")  # 先找有class的
+if not info_p:
+    info_p = pl2.find("p")           # 找不到则找任意 <p>
+```
+
+### 11. 随机bid cookie
+
+**问题**：豆瓣等网站使用 `bid` cookie 标识访客，没有该cookie可能被拦截。
+
+**解决方案**：
+- 在 `fetcher.py` 中生成随机11位字母数字组合作为 `bid`
+- 每次请求都携带随机 `bid`，避免被关联追踪
+- 通过 `headers["Cookie"] = f"bid={_generate_bid()}"` 设置

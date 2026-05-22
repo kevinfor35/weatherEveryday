@@ -5,6 +5,7 @@ multi-crawler - 多爬虫项目入口
 使用方式:
   python main.py crawler_weather    # 运行天气爬虫
   python main.py crawler_cctv_news  # 运行央视新闻爬虫
+  python main.py crawler_douban     # 运行豆瓣榜单爬虫
 """
 
 import sys
@@ -13,6 +14,7 @@ import importlib
 CRAWLERS = {
     "crawler_weather": "中国天气网天气预报爬虫",
     "crawler_cctv_news": "央视新闻热点爬虫",
+    "crawler_douban": "豆瓣影视热播榜单爬虫",
 }
 
 
