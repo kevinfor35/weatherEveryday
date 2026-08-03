@@ -1,0 +1,372 @@
+[
+  {
+    "city": "北京",
+    "crawl_date": "2026-08-03",
+    "today": {
+      "weather": "雷阵雨",
+      "temp_high": "32",
+      "temp_low": "24",
+      "wind_direction": "南风转东风",
+      "wind_level": "<3级"
+    },
+    "forecast_3d": [
+      {
+        "date_label": "4日（明天）",
+        "weather": "雷阵雨",
+        "temp_high": "31",
+        "temp_low": "24",
+        "wind_direction": "南风转东北风",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "5日（后天）",
+        "weather": "多云",
+        "temp_high": "33",
+        "temp_low": "25",
+        "wind_direction": "东南风转北风",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "6日（周四）",
+        "weather": "多云",
+        "temp_high": "34",
+        "temp_low": "23",
+        "wind_direction": "西北风转北风",
+        "wind_level": "<3级"
+      }
+    ]
+  },
+  {
+    "city": "上海",
+    "crawl_date": "2026-08-03",
+    "today": {
+      "weather": "多云转阴",
+      "temp_high": "37",
+      "temp_low": "27",
+      "wind_direction": "东风转东风",
+      "wind_level": "<3级"
+    },
+    "forecast_3d": [
+      {
+        "date_label": "4日（明天）",
+        "weather": "阴",
+        "temp_high": "36",
+        "temp_low": "28",
+        "wind_direction": "东风转东风",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "5日（后天）",
+        "weather": "小雨",
+        "temp_high": "34",
+        "temp_low": "27",
+        "wind_direction": "东风转东北风",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "6日（周四）",
+        "weather": "小雨",
+        "temp_high": "34",
+        "temp_low": "27",
+        "wind_direction": "东北风转东北风",
+        "wind_level": "<3级"
+      }
+    ]
+  },
+  {
+    "city": "广州",
+    "crawl_date": "2026-08-03",
+    "today": {
+      "weather": "中雨转雷阵雨",
+      "temp_high": "29",
+      "temp_low": "25",
+      "wind_direction": "无持续风向转无持续风向",
+      "wind_level": "<3级"
+    },
+    "forecast_3d": [
+      {
+        "date_label": "4日（明天）",
+        "weather": "中雨转多云",
+        "temp_high": "31",
+        "temp_low": "24",
+        "wind_direction": "无持续风向转无持续风向",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "5日（后天）",
+        "weather": "雷阵雨转多云",
+        "temp_high": "33",
+        "temp_low": "24",
+        "wind_direction": "无持续风向转无持续风向",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "6日（周四）",
+        "weather": "多云",
+        "temp_high": "34",
+        "temp_low": "25",
+        "wind_direction": "无持续风向转无持续风向",
+        "wind_level": "<3级"
+      }
+    ]
+  },
+  {
+    "city": "深圳",
+    "crawl_date": "2026-08-03",
+    "today": {
+      "weather": "中雨转雷阵雨",
+      "temp_high": "28",
+      "temp_low": "24",
+      "wind_direction": "无持续风向转无持续风向",
+      "wind_level": "<3级"
+    },
+    "forecast_3d": [
+      {
+        "date_label": "4日（明天）",
+        "weather": "大雨转多云",
+        "temp_high": "31",
+        "temp_low": "24",
+        "wind_direction": "无持续风向转无持续风向",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "5日（后天）",
+        "weather": "中雨转多云",
+        "temp_high": "32",
+        "temp_low": "25",
+        "wind_direction": "无持续风向转无持续风向",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "6日（周四）",
+        "weather": "多云",
+        "temp_high": "30",
+        "temp_low": "25",
+        "wind_direction": "无持续风向转无持续风向",
+        "wind_level": "<3级"
+      }
+    ]
+  },
+  {
+    "city": "成都",
+    "crawl_date": "2026-08-03",
+    "today": {
+      "weather": "晴",
+      "temp_high": "34",
+      "temp_low": "22",
+      "wind_direction": "无持续风向转无持续风向",
+      "wind_level": "<3级"
+    },
+    "forecast_3d": [
+      {
+        "date_label": "4日（明天）",
+        "weather": "晴",
+        "temp_high": "34",
+        "temp_low": "22",
+        "wind_direction": "无持续风向转无持续风向",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "5日（后天）",
+        "weather": "阵雨",
+        "temp_high": "32",
+        "temp_low": "22",
+        "wind_direction": "无持续风向转无持续风向",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "6日（周四）",
+        "weather": "阵雨转小雨",
+        "temp_high": "31",
+        "temp_low": "22",
+        "wind_direction": "无持续风向转无持续风向",
+        "wind_level": "<3级"
+      }
+    ]
+  },
+  {
+    "city": "杭州",
+    "crawl_date": "2026-08-03",
+    "today": {
+      "weather": "多云转晴",
+      "temp_high": "40",
+      "temp_low": "29",
+      "wind_direction": "东风转东风",
+      "wind_level": "<3级"
+    },
+    "forecast_3d": [
+      {
+        "date_label": "4日（明天）",
+        "weather": "多云",
+        "temp_high": "38",
+        "temp_low": "28",
+        "wind_direction": "东风转东风",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "5日（后天）",
+        "weather": "小雨",
+        "temp_high": "35",
+        "temp_low": "28",
+        "wind_direction": "东风转北风",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "6日（周四）",
+        "weather": "小雨",
+        "temp_high": "36",
+        "temp_low": "27",
+        "wind_direction": "北风转北风",
+        "wind_level": "<3级"
+      }
+    ]
+  },
+  {
+    "city": "武汉",
+    "crawl_date": "2026-08-03",
+    "today": {
+      "weather": "晴",
+      "temp_high": "36",
+      "temp_low": "27",
+      "wind_direction": "东南风转东南风",
+      "wind_level": "<3级"
+    },
+    "forecast_3d": [
+      {
+        "date_label": "4日（明天）",
+        "weather": "晴",
+        "temp_high": "36",
+        "temp_low": "26",
+        "wind_direction": "东南风转北风",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "5日（后天）",
+        "weather": "小雨转多云",
+        "temp_high": "35",
+        "temp_low": "27",
+        "wind_direction": "西北风转东风",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "6日（周四）",
+        "weather": "阴转晴",
+        "temp_high": "35",
+        "temp_low": "26",
+        "wind_direction": "北风转北风",
+        "wind_level": "<3级"
+      }
+    ]
+  },
+  {
+    "city": "南京",
+    "crawl_date": "2026-08-03",
+    "today": {
+      "weather": "晴转多云",
+      "temp_high": "38",
+      "temp_low": "27",
+      "wind_direction": "东风转东风",
+      "wind_level": "<3级"
+    },
+    "forecast_3d": [
+      {
+        "date_label": "4日（明天）",
+        "weather": "多云",
+        "temp_high": "37",
+        "temp_low": "28",
+        "wind_direction": "东风转东风",
+        "wind_level": "3-4级"
+      },
+      {
+        "date_label": "5日（后天）",
+        "weather": "小雨转晴",
+        "temp_high": "35",
+        "temp_low": "28",
+        "wind_direction": "东风转东北风",
+        "wind_level": "3-4级转<3级"
+      },
+      {
+        "date_label": "6日（周四）",
+        "weather": "晴转多云",
+        "temp_high": "34",
+        "temp_low": "27",
+        "wind_direction": "东北风转东北风",
+        "wind_level": "3-4级"
+      }
+    ]
+  },
+  {
+    "city": "重庆",
+    "crawl_date": "2026-08-03",
+    "today": {
+      "weather": "小雨",
+      "temp_high": "30",
+      "temp_low": "23",
+      "wind_direction": "西南风转北风",
+      "wind_level": "<3级"
+    },
+    "forecast_3d": [
+      {
+        "date_label": "4日（明天）",
+        "weather": "多云",
+        "temp_high": "33",
+        "temp_low": "25",
+        "wind_direction": "北风转西风",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "5日（后天）",
+        "weather": "小雨",
+        "temp_high": "34",
+        "temp_low": "26",
+        "wind_direction": "北风转东风",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "6日（周四）",
+        "weather": "小雨转中雨",
+        "temp_high": "34",
+        "temp_low": "25",
+        "wind_direction": "东南风转西北风",
+        "wind_level": "<3级"
+      }
+    ]
+  },
+  {
+    "city": "西安",
+    "crawl_date": "2026-08-03",
+    "today": {
+      "weather": "中雨转阴",
+      "temp_high": "27",
+      "temp_low": "20",
+      "wind_direction": "无持续风向转无持续风向",
+      "wind_level": "<3级"
+    },
+    "forecast_3d": [
+      {
+        "date_label": "4日（明天）",
+        "weather": "多云",
+        "temp_high": "28",
+        "temp_low": "21",
+        "wind_direction": "无持续风向转无持续风向",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "5日（后天）",
+        "weather": "多云转小雨",
+        "temp_high": "31",
+        "temp_low": "23",
+        "wind_direction": "无持续风向转无持续风向",
+        "wind_level": "<3级"
+      },
+      {
+        "date_label": "6日（周四）",
+        "weather": "小雨",
+        "temp_high": "31",
+        "temp_low": "23",
+        "wind_direction": "无持续风向转无持续风向",
+        "wind_level": "<3级"
+      }
+    ]
+  }
+]
